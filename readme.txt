@@ -1,0 +1,55 @@
+An str count tool based on NGS SSR sequence
+
+perl str_count.pl
+Options: [required]
+
+        --fastq_dir/-i            Paired-end fastq file dir
+                                  file name format: sample_name_R1.fastq.gz, sample_name_R2.fastq.gz
+        --sample_list/-s          samples need to be analyzed. If there are multiple samples, separate them with commas. example: sample1,sample2,sample3
+        --target_fasta/-t         pcr targeted fasta seq, seq name should be specified named as our designed.
+        --output_dir/-o           output dir
+        --parallel                parallel sample count, example : 10
+        --soft_flash              flash soft directory. please download and install by yourself. http://ccb.jhu.edu/software/FLASH/
+        --soft_blastn             blastn soft directory. please download and install by yourself.  ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/
+        --soft_fastq_to_fasta     fastq_to_fasta soft directory. please download and install by yourself. http://hannonlab.cshl.edu/fastx_toolkit/commandline.html
+
+Options: [optional]
+
+         --help/-h                help doc
+
+
+how target_fasta seq named?
+
+example1:
+>seq_name1
+GTCAATCATGGCACAACAGCACAACTGTGTGAGATAATTTATTTTCCTATCTCATCATCATCATCATCATCGTCACATGACCACACTGCACTCCACCACCATGCAACCACCACATCTGCACCTCCTAACCACCACCCTCCTCCTTCTGCTCCTCTGGGCCGTAACTTTTCCGGCATTCCTCTCCGCCGTCAACCTCCCTGAATTCCGTGAAGCCCCAGCATTCCGAAACGGAAACCAATGCCCCAACCCAACCTCCTCTTCCTCCACCAT
+only one motif will be analyzed in seq_name1, and motif seq is TCA, start from 52 to 69 in target seq.
+this seq name in fasta file should be named as:  seq_name1|TCA(52-69)
+
+
+example2:
+>seq_name2
+GTCAATCATGGCACAACAGCACAACTGTGTGAGATAATTTATTTTCCTATCTCATCATCATCATCATCATCGTCACATGACCACACTGCACTCCACCTCATCATCATCATCATCATCATCATCAAACCACCACCCTCCTCCTTCTGCTCCTCTGGGCCGTAACTTTTCCGGCATTCCTCTCCGCCGTCAACCTCCCTGAATTCCGTGAAGCCCCAGCATTCCGAAACGGAAACCAATGCCCCAACCCAACCTCCTCTTCCTCCACCAT
+there are two motif should be analyzed in seq_name2: TCA and TCA
+we should named it as:  seq_name2|TCA(52-69);TCA(98-124)
+
+
+example3:
+>seq_name3
+GTCAATCATGGCACAACAGCACAACTGTGTGAGATAATTTATTTTCCTATCTCATCATCATCATCATCATCGTCACATGACCACACTGCACTCCACCCCTCCTCCTCCTCCTCCTCCTCCTAACCACCACCCTCCTCCTTCTGCTCCTCTGGGCCGTAACTTTTCCGGCATTCCTCTCCGCCGTCAACCTCCCTGAATTCCGTGAAGCCCCAGCATTCCGAAACGGAAACCAATGCCCCAACCCAACCTCCTCTTCCTCCACCAT
+there are two motif should be analyzed in seq_name3: TCA and CCT
+we should named it as:  seq_name3|TCA(52-69);CCT(98-121)
+
+
+Dependencies: 
+perl packages
+    File::Spec;
+    Getopt::Long;
+    Bio::SeqIO;
+    Bio::SearchIO;
+    Parallel::ForkManager;
+
+soft
+    FLASH: merges reads from paired-end sequencing. http://ccb.jhu.edu/software/FLASH/
+    BLASTN: perform BLAST searches. ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/
+    fastq_to_fasta: convert fastq to fasta. http://hannonlab.cshl.edu/fastx_toolkit/commandline.html

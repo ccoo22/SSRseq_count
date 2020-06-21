@@ -1,0 +1,40 @@
+[FLASH] Starting FLASH v1.2.11
+[FLASH] Fast Length Adjustment of SHort reads
+[FLASH]  
+[FLASH] Input files:
+[FLASH]     example/fastq_example/CC11_R1.fastq.gz
+[FLASH]     example/fastq_example/CC11_R2.fastq.gz
+[FLASH]  
+[FLASH] Output files:
+[FLASH]     ./example/result/mapping/CC11/CC11.extendedFrags.fastq
+[FLASH]     ./example/result/mapping/CC11/CC11.notCombined_1.fastq
+[FLASH]     ./example/result/mapping/CC11/CC11.notCombined_2.fastq
+[FLASH]     ./example/result/mapping/CC11/CC11.hist
+[FLASH]     ./example/result/mapping/CC11/CC11.histogram
+[FLASH]  
+[FLASH] Parameters:
+[FLASH]     Min overlap:           15
+[FLASH]     Max overlap:           150
+[FLASH]     Max mismatch density:  0.100000
+[FLASH]     Allow "outie" pairs:   true
+[FLASH]     Cap mismatch quals:    false
+[FLASH]     Combiner threads:      4
+[FLASH]     Input format:          FASTQ, phred_offset=33
+[FLASH]     Output format:         FASTQ, phred_offset=33
+[FLASH]  
+[FLASH] Starting reader and writer threads
+[FLASH] Starting 4 combiner threads
+[FLASH] Processed 2500 read pairs
+[FLASH]  
+[FLASH] Read combination statistics:
+[FLASH]     Total pairs:      2500
+[FLASH]     Combined pairs:   2440
+[FLASH]         Innie pairs:   2434 (99.75% of combined)
+[FLASH]         Outie pairs:   6 (0.25% of combined)
+[FLASH]     Uncombined pairs: 60
+[FLASH]     Percent combined: 97.60%
+[FLASH]  
+[FLASH] Writing histogram files.
+[FLASH]  
+[FLASH] FLASH v1.2.11 complete!
+[FLASH] 0.109 seconds elapsed
