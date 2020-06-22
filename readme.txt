@@ -53,3 +53,7 @@ soft
     FLASH: merges reads from paired-end sequencing. http://ccb.jhu.edu/software/FLASH/
     BLASTN: perform BLAST searches. ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/
     fastq_to_fasta: convert fastq to fasta. http://hannonlab.cshl.edu/fastx_toolkit/commandline.html
+
+example usage: 
+perl str_count.pl -i example/fastq_example  -s CC10,CC11,CC12 -t example/target.fa -o ./example/result --parallel 10 --soft_flash /path/to/flash --soft_blastn /path/to/blastn --soft_fastq_to_fasta /path/to/fastq_to_fasta
+
