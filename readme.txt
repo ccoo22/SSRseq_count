@@ -5,7 +5,6 @@ Options: [required]
 
         --fastq_dir/-i            Paired-end fastq file dir
                                   file name format: sample_name_R1.fastq.gz, sample_name_R2.fastq.gz
-        --sample_list/-s          samples need to be analyzed. If there are multiple samples, separate them with commas. example: sample1,sample2,sample3
         --target_fasta/-t         pcr targeted fasta seq, seq name should be specified named as our designed.
         --output_dir/-o           output dir
         --parallel                parallel sample count, example : 10
@@ -14,7 +13,8 @@ Options: [required]
         --soft_fastq_to_fasta     fastq_to_fasta soft directory. please download and install by yourself. http://hannonlab.cshl.edu/fastx_toolkit/commandline.html
 
 Options: [optional]
-
+        --sample_list/-s          samples that need to be analyzed. If there are multiple samples, separate them with commas. example: sample1,sample2,sample3
+                                  we will use all samples in fastq_dir by default.
          --help/-h                help doc
 
 
