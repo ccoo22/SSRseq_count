@@ -37,7 +37,6 @@ Options: [required]
 
         --fastq_dir/-i            Paired-end fastq file dir
                                   file name format: sample_name_R1.fastq.gz, sample_name_R2.fastq.gz
-        --sample_list/-s          samples that need to be analyzed. If there are multiple samples, separate them with commas. example: sample1,sample2,sample3
         --target_fasta/-t         pcr targeted fasta seq, seq name should be named as our designed. 
         --output_dir/-o           output dir
         --parallel                parallel sample count, example : 10
@@ -46,10 +45,13 @@ Options: [required]
         --soft_fastq_to_fasta     path/to/fastq_to_fasta    fastq_to_fasta soft directory. please download and install by yourself. http://hannonlab.cshl.edu/fastx_toolkit/commandline.html
 
 Options: [optional]
+        --sample_list/-s          samples that need to be analyzed. If there are multiple samples, separate them with commas. example: sample1,sample2,sample3
+                                  we will use all samples in fastq_dir by default.
+        --help/-h                 help doc
 
-         --help/-h                help doc
+\n" if (defined $if_help or not defined $fastq_dir or not defined $target_fasta or not defined $output_dir or not defined $parallel or not defined $SOFT_FLASH or not defined $SOFT_BLASTN);
 
-\n" if (defined $if_help or not defined $fastq_dir or not defined $sample_list or not defined $target_fasta or not defined $output_dir or not defined $parallel or not defined $SOFT_FLASH or not defined $SOFT_BLASTN);
+$sample_list = get_sample_list($fastq_dir) if(not defined $sample_list);
 ###################################################################### 初始化
 make_dir($output_dir);
 
@@ -699,7 +701,7 @@ sub check_target_motif{
             }
             else
             {
-                die "motif format info error : $target_full_name -> $motif_info\n";
+                die "motif format info error, please read readme.txt : $target_full_name -> $motif_info\n";
             }
             
             # 检测是否重复
@@ -908,4 +910,20 @@ sub get_seq_str{
     my $str_seq_motif_perc = ($target_seq_motif_count == 0) ? 0 : sprintf "%0.4f", $str_seq_motif_count / $target_seq_motif_count;# str序列中motif占参考序列中motif数量的比例
 
     return ($str_seq, $start, $end, $str_seq_length, $str_seq_motif_count, $str_seq_motif_perc);
+}
+
+
+sub get_sample_list{
+    my $fastq_dir = shift @_;
+
+    my @samples;
+    opendir FASTQ_DIR, $fastq_dir;
+    while(my $file = readdir FASTQ_DIR)
+    {
+        my ($sample) = $file =~ /(.*)_R1.fastq.gz/;
+        push @samples, $sample if(defined $sample);
+    }
+    close FASTQ_DIR;
+    my $sample_list = join ",", @samples;
+    return $sample_list;
 }

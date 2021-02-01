@@ -1,9 +1,0 @@
-
-
-Building a new DB, current time: 06/21/2020 14:18:10
-New DB name:   /home/ganb/work/research/STR/STR_v2.5/SSRseq_count/example/result/target_fasta_db/seq.fa
-New DB title:  ./example/result/target_fasta_db/seq.fa
-Sequence type: Nucleotide
-Keep MBits: T
-Maximum file size: 1000000000B
-Adding sequences from FASTA; added 61 sequences in 0.014421 seconds.
