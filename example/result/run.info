@@ -1,0 +1,20 @@
+
+##############################
+ssr reads count
+Version: v1.0 2020-06-21
+Contact: 129 ganb
+
+
+---
+Command: perl /home/ganb/work/research/STR/STR_v2.5/20B1105A_SSR/../SSRseq_count/str_count.pl -i fastq/ -t seq.fa -o ./output/ --parallel 10 --soft_flash /home/genesky/software/flash2/1.2.11/flash --soft_blastn /home/genesky/software/blast+/2.9.0/bin/blastn --soft_fastq_to_fasta /home/genesky/software/fastx_toolkit/0.0.13/fastq_to_fasta
+---
+Start time: 2021-02-01 11:08.38
+
+[SET]  fastq_dir : fastq/
+[SET]  sample_list : FJ017,FJ038,JI021,JI045,JI046,JI068,NL011,NL021,NL030,NL043
+[SET]  target_fasta : seq.fa
+[SET]  output_dir : ./output/
+[SET]  parallel : 10
+[SET]  soft_flash : /home/genesky/software/flash2/1.2.11/flash
+[SET]  soft_blastn : /home/genesky/software/blast+/2.9.0/bin/blastn
+[SET]  soft_fastq_to_fasta : /home/genesky/software/fastx_toolkit/0.0.13/fastq_to_fasta
