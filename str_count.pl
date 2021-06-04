@@ -26,23 +26,23 @@ GetOptions(
         "output_dir|o=s"   => \$output_dir,
 
         "parallel=s"       => \$parallel,
-        "soft_flash=s"     => \$SOFT_FLASH,
-        "soft_blastn=s"    => \$SOFT_BLASTN,
-        "soft_fastq_to_fasta=s"    => \$SOFT_FASTQ_TO_FASTA,
+        "software_flash=s"     => \$SOFT_FLASH,
+        "software_blastn=s"    => \$SOFT_BLASTN,
+        "software_fastq_to_fasta=s"    => \$SOFT_FASTQ_TO_FASTA,
 
         "help|h"           => \$if_help,
 );
 die "
 Options: [required]
 
-        --fastq_dir/-i            Paired-end fastq file dir
-                                  file name format: sample_name_R1.fastq.gz, sample_name_R2.fastq.gz
-        --target_fasta/-t         pcr targeted fasta seq, seq name should be named as our designed. 
-        --output_dir/-o           output dir
-        --parallel                parallel sample count, example : 10
-        --soft_flash              path/to/flash     flash soft directory. please download and install by yourself. http://ccb.jhu.edu/software/FLASH/
-        --soft_blastn             path/to/blastn      blastn soft directory. please download and install by yourself.  ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/
-        --soft_fastq_to_fasta     path/to/fastq_to_fasta    fastq_to_fasta soft directory. please download and install by yourself. http://hannonlab.cshl.edu/fastx_toolkit/commandline.html
+        --fastq_dir/-i                Paired-end fastq file dir
+                                      file name format: sample_name_R1.fastq.gz, sample_name_R2.fastq.gz
+        --target_fasta/-t             pcr targeted fasta seq, seq name should be named as our designed. 
+        --output_dir/-o               output dir
+        --parallel                    how many sample will be analysised in parallel, example : 10
+        --software_flash              path/to/flash     flash soft directory. please download and install by yourself. http://ccb.jhu.edu/software/FLASH/
+        --software_blastn             path/to/blastn      blastn soft directory. please download and install by yourself.  ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/
+        --software_fastq_to_fasta     path/to/fastq_to_fasta    fastq_to_fasta soft directory. please download and install by yourself. http://hannonlab.cshl.edu/fastx_toolkit/commandline.html
 
 Options: [optional]
         --sample_list/-s          samples that need to be analyzed. If there are multiple samples, separate them with commas. example: sample1,sample2,sample3
