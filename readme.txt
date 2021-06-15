@@ -8,9 +8,9 @@ Options: [required]
         --target_fasta/-t             pcr targeted fasta seq, seq name should be named as our designed.
         --output_dir/-o               output dir
         --parallel                    how many sample will be analysised in parallel, example : 10
-        --software_flash              path/to/flash     flash soft directory. please download and install by yourself. http://ccb.jhu.edu/software/FLASH/
-        --software_blastn             path/to/blastn      blastn soft directory. please download and install by yourself.  ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/
-        --software_fastq_to_fasta     path/to/fastq_to_fasta    fastq_to_fasta soft directory. please download and install by yourself. http://hannonlab.cshl.edu/fastx_toolkit/commandline.html
+        --software_flash              path/to/flash     flash software directory. please download and install by yourself. http://ccb.jhu.edu/software/FLASH/
+        --software_blastn             path/to/blastn      blastn software directory. please download and install by yourself.  ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/
+        --software_fastq_to_fasta     path/to/fastq_to_fasta    fastq_to_fasta software directory. please download and install by yourself. http://hannonlab.cshl.edu/fastx_toolkit/commandline.html
 
 Options: [optional]
         --sample_list/-s          samples that need to be analyzed. If there are multiple samples, separate them with commas. example: sample1,sample2,sample3
