@@ -7,7 +7,7 @@ Options: [required]
                                       file name format: sample_name_R1.fastq.gz, sample_name_R2.fastq.gz
         --target_fasta/-t             pcr targeted fasta seq, seq name should be named as our designed.
         --output_dir/-o               output dir
-        --parallel                    how many sample will be analysised in parallel, example : 10
+        --parallel                    how many samples will be analysised in parallel, example : 10
         --software_flash              path/to/flash     flash software directory. please download and install by yourself. http://ccb.jhu.edu/software/FLASH/
         --software_blastn             path/to/blastn      blastn software directory. please download and install by yourself.  ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/
         --software_fastq_to_fasta     path/to/fastq_to_fasta    fastq_to_fasta software directory. please download and install by yourself. http://hannonlab.cshl.edu/fastx_toolkit/commandline.html
