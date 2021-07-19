@@ -57,3 +57,6 @@ software
 example usage: 
 perl str_count.pl -i example/fastq_example  -s CC10,CC11,CC12 -t example/target.fa -o ./example/result --parallel 10 --software_flash /path/to/flash --software_blastn /path/to/blastn --software_fastq_to_fasta /path/to/fastq_to_fasta
 
+Citing 
+Cui X, Li C, Qin S, Huang Z, Gan B, Jiang Z, Huang X, Yang X, Li Q, Xiang X, Chen J, Zhao Y, Rong J. High-throughput sequencing-based microsatellite genotyping for polyploids to resolve allele dosage uncertainty and improve analyses of genetic diversity, structure and differentiation: A case study of the hexaploid Camellia oleifera. Mol Ecol Resour. 2021 Jul 14. doi: 10.1111/1755-0998.13469. Epub ahead of print. PMID: 34260828.
+
